@@ -5,11 +5,11 @@ Summary:	DokuWiki plugin to generate feeds for other plugins
 Summary(pl.UTF-8):	Wtyczka feed dla DokuWiki
 Name:		dokuwiki-plugin-%{plugin}
 Version:	20100107
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/WWW
-Source0:	http://cloud.github.com/downloads/dokufreaks/plugin-feed/plugin-feed.tgz
-# Source0-md5:	ffb84ef4d2fc623648c6d4a77a4e4c42
+Source0:	https://github.com/dokufreaks/plugin-feed/tarball/master#/%{name}-%{version}.tgz
+# Source0-md5:	0d3c979368896d3bb844f5a33829eece
 URL:		http://www.dokuwiki.org/plugin:feed
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.520
@@ -42,12 +42,12 @@ Wtyczka dla DokuWiki
 
 %prep
 %setup -qc
-mv %{plugin}/* .
+mv dokufreaks-plugin-feed-*/* .
 
-version=$(cat VERSION)
+version=$(awk '/^date/{print $2}' plugin.info.txt)
 if [ "$(echo "$version" | tr -d -)" != %{version} ]; then
 	: %%{version} mismatch
-#	exit 1
+	exit 1
 fi
 
 %install
@@ -71,4 +71,5 @@ fi
 %dir %{plugindir}
 %{plugindir}/*.css
 %{plugindir}/*.php
+%{plugindir}/*.txt
 %{plugindir}/images
