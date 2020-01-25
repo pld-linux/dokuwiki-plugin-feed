@@ -1,6 +1,5 @@
 %define		plugin		feed
 %define		php_min_version 5.0.0
-%include	/usr/lib/rpm/macros.php
 Summary:	DokuWiki plugin to generate feeds for other plugins
 Summary(pl.UTF-8):	Wtyczka feed dla DokuWiki
 Name:		dokuwiki-plugin-%{plugin}
