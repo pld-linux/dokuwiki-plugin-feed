@@ -4,7 +4,7 @@ Summary:	DokuWiki plugin to generate feeds for other plugins
 Summary(pl.UTF-8):	Wtyczka feed dla DokuWiki
 Name:		dokuwiki-plugin-%{plugin}
 Version:	20100107
-Release:	8
+Release:	9
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	https://github.com/dokufreaks/plugin-feed/tarball/master/%{name}-%{version}.tgz
